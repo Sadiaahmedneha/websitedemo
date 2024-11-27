@@ -1,0 +1,688 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Care Hospital created by Group-B</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="logo"><img src="images/logo.png" alt=""></div>
+
+    <nav class="navbar">
+        <a href="#">home</a>
+        <a href="#about">about</a>
+        <a href="#doctor">doctors</a>
+        <a href="#Our-Services">services</a>
+        <a href="department.html">department</a>
+        <a href="Neha(Blog)/blog.html">blogs</a>
+        <a href="FAQ/FAQ(Maisha).html">FAQ</a>
+        <a href="#patient's review">patient reviews</a>
+        <a href="#appointment" class="nav-appointment-btn">Appointment</a>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="images/Hospital building.png" style="width:100%">
+  <div class="text"><h1>Feel Better About Finding Hospital</h1>
+    <!--btns-->
+    <div class="home-text-btns">
+        <a href="#doctor"><i class="fa-solid fa-magnifying-glass"></i>Find Doctor's</a>
+        <a href="#appointment"><i class="fa-solid fa-check"></i>Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<div class="mySlides fade">
+  <img src="images/registration sector.png" style="width:100%">
+  <div class="text"><h1>Feel Better About Finding Hospital</h1>
+    <!--btns-->
+    <div class="home-text-btns">
+        <a href="#doctor"><i class="fa-solid fa-magnifying-glass"></i>Find Doctor's</a>
+        <a href="#appointment"><i class="fa-solid fa-check"></i>Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<div class="mySlides fade">
+  <img src="images/healthcare facility1.jpg" style="width:100%">
+  <div class="text"><h1>Feel Better About Finding Hospital</h1>
+    <!--btns-->
+    <div class="home-text-btns">
+        <a href="#doctor"><i class="fa-solid fa-magnifying-glass"></i>Find Doctor's</a>
+        <a href="#appointment"><i class="fa-solid fa-check"></i>Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<!-- home section ends -->
+
+<!--==appointment-search===============================-->
+<div class="appointment-search-container">
+    <h3>Find Services</h3>
+    <!--**search******************-->
+    <div class="appointment-search">
+        <!--**doctor-search-box*******-->
+        <div class="appo-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search For Services..">
+        </div>
+    
+        <!--**btn*********************-->
+        <button>
+        <a href="#Our-Services"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </button>
+    </div>
+</div>
+<!--appointment-search end-->
+
+<!-- homepage end-->
+
+<!-- about section start  -->
+
+<section id="about" class="about">
+
+    <h1 class="about-heading">About Us </h1>
+    <h3 class="about-doctor-title">We are here to help patients raise happy and healthy life  </h3>
+
+    <div class="about-box-container">
+
+        <!-- start here  -->
+        <div class="about-box">
+            <!-- about images  -->
+            <div class="about-images">
+                <img src="images/about-1.jpg" alt="">
+            </div>
+            
+            <!-- about heading & text  -->
+            <div class="about-content">
+                <h4>We all need support through the most important period of our patients</h4>
+                <p>Welcome to Elite Care Hospital(ECH). We offer Hospital & Diagnostic services, 24 Hour Hospital Service & Specialist doctors’ Consultations. We provide the highest quality service from the moment we pick up the phone to schedule an appointment until we deliver the final diagnostic reports. Our staff is culturally diverse, highly experienced, and professionally managed. At BCH, we are dedicated to assisting patients to cope with the complexities of modern investigations. We are committed to partnering with our physicians to provide quality, compassionate, efficient diagnostic services to the communities we serve.
+                    <br>
+                With patient convenience in mind, we offer an expansive menu of laboratory testing services that include both routine and highly complex assays. We have a full-service imaging center that provides one location necessary for all diagnostic exams. Our commitment to maintaining the highest standards of customer service to makes BCH a respected choice for quality imaging and clinical diagnostic.
+                  <br>  
+                At ECH, we are proud of our investigation reports, modernized types of equipment, carefully selected man, and materials. Aalok is located in the strategic area of Mirpur, the center can be reached easily from almost anywhere in Bangladesh.</p>
+                
+                <!-- <a href="#about"><button class="about-button">learn more</button></a>    -->
+            </div>
+            
+        </div>
+        <!-- end here  -->
+
+        
+        <!-- start ab here  -->
+        <div class="about-box">
+            <!-- about images  -->
+            <div class="about-images">
+                <img src="images/about-2.JPG" alt="">
+            </div>
+            
+            <!-- about heading & text  -->
+            <div class="about-content">
+                <h4>Why Choose Us</h4>
+                <p> With a steadfast commitment to your well-being, our team of highly
+                    trained healthcare professionals ensures that you receive nothing
+                    short of exceptional patient experiences.</p>
+             <!-- <a href="#"><button class="button">learn more</button></a>    -->
+             <div class="about-why__grid">
+                <span><i class="ri-hand-heart-line"></i></span>
+                <div>
+                  <h4>Intensive Care</h4>
+                  <p>
+                    Our Intensive Care Unit is equipped with advanced technology and
+                    staffed by team of professionals
+                  </p>
+                </div>
+                <span><i class="ri-truck-line"></i></span>
+                <div>
+                  <h4>Free Ambulance Car</h4>
+                  <p>
+                    A compassionate initiative to prioritize your health and
+                    well-being without any financial burden.
+                  </p>
+                </div>
+                <span><i class="ri-hospital-line"></i></span>
+                <div>
+                  <h4>Medical and Surgical</h4>
+                  <p>
+                    Our Medical and Surgical services offer advanced healthcare
+                    solutions to address medical needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- end here  -->
+
+        
+        <!-- start here  -->
+        <div class="about-box">
+            <!-- about images  -->
+            <div class="about-images">
+                <img src="images/about-3.JPG" alt="">
+            </div>
+            
+            <!-- about heading & text  -->
+            <div class="about-content">
+                <h4>Mission</h4>
+                <p>1. To serve each patient with individualized care through dedicated and professionally competent teams using advanced technology. <br>
+
+                    2. Making service quality a top priority in all we do.
+                    <br>
+                    3. Providing quality healthcare service in all process.
+                    <br>
+                    4. Achieving Customer Satisfaction through quality service.
+                    <br>
+                    5. To carry on educational and research activities.
+                    <br>
+                    6. To participate in the creation of healthier lives within the community.</p>
+                    <h4>Vision</h4>
+                    <p>To become the best healthcare provider in the healthcare sector of the country will create healthier communities by creative individuals to be more responsible for their personal health status. Continuous pursue the quality, Value, Patient, Customer, and Staff satisfaction using advanced technology and efficient leadership.
+
+                    </p>  
+                        
+                    <h4>Values</h4>
+                    <p>  Priority: We care fast.
+                        <br>
+                      
+                        Professionalism : Professionalism is our strength “ We do everything professionally ”.
+                    </p>
+                       
+            </div>
+            
+        </div>
+        <!-- end here  -->
+       </div>
+</section>
+
+<!-- about section end  -->
+
+<!-- doctor section start  -->
+
+<section id="doctor" class="doctor">
+
+    <div class="doctor-container">
+
+        <h1 class="doctor-heading">doctors</h1>
+        <h3 class="doctor-title">our professional doctors</h3>
+
+        <div class="doctor-box-container">
+
+            <!-- start here  -->
+            <div class="doctor-box">
+                <img src="images/amirjeheri.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/dramir-jazaeri.html" target="_blank">
+                        <h2>Dr.Amir Jazaeri  </h2>
+                    </a>
+                    <p>Orthopedic
+                    </p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/sukanta mandal.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drsukanta-mondal.html" target="_blank">
+                        <h2> Dr. Sunkanta Mondal</h2>
+                    </a>
+                    <p>Medicine</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/rakesh amin.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drrakesh-amin.html" target="_blank">
+                        <h2>Dr.Rakesh Amin</h2>
+                    </a>
+                    <p>Hepatology</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/sarrah hossain.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drsarah-hussain.html" target="_blank">
+                        <h2>Dr Sarah Hussain</h2>
+                    </a>
+                    <p>Cardiologist</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/tania adib.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drtania-adib.html" target="_blank">
+                        <h2> Dr.tania Adib</h2>
+                    </a>
+                    <p>Neurosurgeon</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/millei gibson.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drmillia-gibson.html" target="_blank">
+                        <h2> Dr.Millie Gibson
+                        </h2>
+                    </a>
+                    <p>Burn and Plastic Surgeon</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/kadambini ganguli.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/dr-kadambini-ganguly.html" target="_blank">
+                        <h2> Dr.Kadambini Ganguly</h2>
+                    </a>
+                    <p>Gynecologist</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+             <!-- start here  -->
+             <div class="doctor-box">
+                <img src="images/jhon deu.JPG" alt="">                
+                
+                <div class="doctor-content">
+                    <a href="https://adhitidey.blogspot.com/2024/11/drjhon-due.html" target="_blank">
+                        <h2>Dr.Jone due</h2>
+                    </a>
+                    <p>Neonatal & Pediatric Kidney Diseases Specialist</p>
+
+                    <!-- card icons  -->
+                    <div class="doctor-icons">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end here  -->
+
+        </div>
+    </div>
+</section>
+<!-- doctor section end  -->
+
+<!-- services section starts  -->
+<section id="Our-Services">
+
+    <!-- heading -->
+    <div class="Services-heading">
+     <!-- text -->
+      <div class="Services-heading-text">
+        <h1>Our Services</h1>
+        <h2>High Quality Services For You</h2>
+      </div>
+      <!-- btns -->
+       <div class="Services-slide-btns">
+       
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+
+       </div>
+
+    </div>
+    <!-- box-container -->
+     <div class="Services-box-container">
+
+      <!-- Swiper -->
+  <div class="swiper mySwiperservices">
+    <div class="swiper-wrapper">
+      <!-- **slide-1** -->
+
+      <div class="swiper-slide">
+          <!-- box -->
+       <div class="Services-box s-box1">
+        <!-- icon -->
+        <i class="fa-solid fa-tooth"></i>
+        <!-- title -->
+         <strong>Dental Care</strong>
+         <!-- details -->
+          <p>An oral health professional is trained to spot and treat any problems early, which can prevent bigger problems developing. They can also provide you with care to prevent disease, such as fluoride treatments and dental sealants to prevent tooth decay </p>
+          <!-- btn -->
+           <a href="https://laila487490.blogspot.com/2024/11/care-is-medical-is-medical-care-and.html"> Read More</a>
+       </div>
+
+      </div><!-- slide-end -->
+      <!-- **slide-2** -->
+
+      <div class="swiper-slide">
+        <!-- box -->
+     <div class="Services-box s-box2">
+      <!-- icon -->
+      <i class="fa-solid fa-eye"></i>
+      <!-- title -->
+       <strong>Eye Care</strong>
+       <!-- details -->
+        <p>Eye care services means those urgent health care services related to the examination, diagnosis, treatment and management of conditions, illnesses and diseases of the eye and related structures that are provided to treat conditions, illnesses or diseases of the eye that if not treated within 24 hours present a serious ... </p>
+        <!-- btn -->
+         <a href="https://laila487490.blogspot.com/2024/11/care-refers-to-practice-of-implementing.html">Read More</a>
+     </div>
+
+    </div><!-- slide-end -->
+    <!-- **slide-3** -->
+
+    <div class="swiper-slide">
+      <!-- box -->
+   <div class="Services-box s-box3">
+    <!-- icon -->
+    <i class="fa-sharp fa-solid fa-face-grin-beam"></i>
+     <!-- title -->
+     <strong>Skin Care</strong>
+     <!-- details -->
+      <p>A skin care specialist is a beauty expert who provides treatments to improve the health and appearance of a client's skin: 
+        Treatments: They may perform facials, massages, waxing, peels, scrubs, and other skin treatments 
+        Skincare routines: They create personalized skincare routines for clients to meet their goals   </p>
+      <!-- btn -->
+       <a href="https://laila487490.blogspot.com/2024/11/according-to-oxford-dictionary-skincare.html">Read More</a>
+   </div>
+
+  </div><!-- slide-end -->
+  <!-- **slide-4** -->
+
+  <div class="swiper-slide">
+    <!-- box -->
+ <div class="Services-box s-box4">
+  <!-- icon -->
+  <i class="fa-duotone fa-solid fa-person"></i>
+  <!-- title -->
+   <strong>Surgical</strong>
+   <!-- details -->
+    <p>Surgery is a medical procedure that involves cutting into the body to treat a disease, injury, or other health problem. It can also be used to diagnose a condition or to remove or repair a part of the body.   </p>
+    <!-- btn -->
+     <a href="https://laila487490.blogspot.com/2024/11/means-relating-to-surgeons-surgery-or.html">Read More</a>
+ </div>
+
+</div><!-- slide-end -->
+
+</div><!-- wrapper-end -->
+
+
+</div><!-- swiper-end -->
+
+</div><!-- container-end -->
+
+<!-- btn -->
+ <span class="Service-help-btn">Contact Us For Need Any Help And Services<a href="#">Let's Get Started</a></span>
+    </section>
+    <!-- ==Services-end=== -->
+    <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+
+<!-- ==Services-end=== -->
+ 
+<!-- review start -->
+<section id= "patient's review">
+<div class="container">
+    <h1>Patient Reviews</h1>
+    <div class="reviews">
+        <div class="review">
+            <img src="./Images/1.jpg" alt="User 1">
+            <h2>Sumaiya Tabassum</h2>
+            <p>Excellent care and friendly staff. Highly recommend this hospital.</p>
+            <div class="rating">★★★★★</div>
+        </div>
+        <div class="review">
+            <img src="./Images/2.jpg" alt="User 2">
+            <h2>Rayhan Rafi</h2>
+            <p>Had a great experience. The doctors were knowledgeable and compassionate.</p>
+            <div class="rating">★★★★☆</div>
+        </div>
+        <div class="review">
+            <img src="./Images/3.jpg" alt="User 3">
+            <h2>Sanjida Khanom</h2>
+            <p>Had a great experience. The doctors were knowledgeable and compassionate.</p>
+            <div class="rating">★★★☆☆</div>
+        </div>
+        <div class="review">
+            <img src="./Images/4.jpg" alt="User 4">
+            <h2>Ishaya Tasnim</h2>
+            <p>Had a great experience. The doctors were knowledgeable and compassionate.</p>
+            <div class="rating">★★★★☆</div>
+        </div>
+        <div class="review">
+            <img src="./Images/5.jpg" alt="User 5">
+            <h2>Onik Mahmud</h2>
+            <p>Had a great experience. The doctors were knowledgeable and compassionate.</p>
+            <div class="rating">★★★★☆</div>
+        </div>
+        <div class="review">
+            <img src="./Images/6.jpg" alt="User 6">
+            <h2>Dipti Chowdhury</h2>
+            <p>Had a great experience. The doctors were knowledgeable and compassionate.</p>
+            <div class="rating">★★★★☆</div>
+        </div>
+        </div>
+</div>
+</section>
+<!-- review end-- -->
+
+<!-- appointmenting section starts   -->
+
+<section class="appointment" id="appointment">
+
+    <h1 class="heading"> make appointment </h1>    
+    <div class="row">
+        <div class="image">
+            <img src="images/book-img.svg" alt="">
+        </div>
+
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <?php
+            if(isset($message)) {
+                foreach($message as $message) {
+                echo'<p class ="message">'.$message.'</p>';
+            }
+            }
+        ?>     
+            <h3>make appointment</h3>
+            <input type="text"name="name" placeholder="your name" class="box">
+            <input type="number"name="number" placeholder="your number" class="box">
+            <input type="email"name="email" placeholder="your email" class="box">
+            <input type="date"name="date" class="box">
+            <input type="submit" name="submit" value="appointment now" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- appointmenting section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="footer-container">
+        <!--**company-box**-->
+        <div class="footer-company-box">
+            <!--logo-->
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <!--details-->
+
+            <p> Your heath our priority.</p>
+            <!--social-box-->
+
+            <div class="footer-social">
+                <h3></h3>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div><!--**company-box end**-->
+
+        <!--**link-box***-->
+        <div class="footer-link-box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="#Our-Services"> <i class="fas fa-chevron-right"></i> services </a>
+            <a href="#doctor"> <i class="fas fa-chevron-right"></i> doctors </a>
+            <a href="department.html"> <i class="fas fa-chevron-right"></i> department </a>
+            <a href="#appointment" class="nav-appointment-btn"> <i class="fas fa-chevron-right"></i> appointment </a>
+            <a href="Neha(Blog)/blog.html"> <i class="fas fa-chevron-right"></i> blogs </a>
+            <a href="#patient's review"> <i class="fas fa-chevron-right"></i> review </a>
+            <a href="FAQ/FAQ(Maisha).html"> <i class="fas fa-chevron-right"></i> FAQ</a>
+        </div>
+
+        <div class="footer-link-box">
+            <h3>our services</h3>
+            <a href="#Our-Services"> <i class="fas fa-chevron-right"></i> dental care </a>
+            <a href="#Our-Services"> <i class="fas fa-chevron-right"></i> Eye Care </a>
+            <a href="#Our-Services"> <i class="fas fa-chevron-right"></i> Skin Care </a>
+            <a href="#Our-Services"> <i class="fas fa-chevron-right"></i> Surgical </a>
+            <a href="#appointment"> <i class="fas fa-chevron-right"></i> onlineappointment </a>
+        </div>
+
+        <div class="footer-link-box">
+            <h3>appointment info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +8801753309245 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +8801782546978 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> nusrathumayra876@gmail.com </a>
+            <a href="#"> <i class="fas fa-envelope"></i> elitecarehospital@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0671027205854!2d90.41991758644964!3d23.99340742399597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755db37a4ca1be5%3A0xcac4cb2639ee8264!2sElite%20Care%20Hospital!5e0!3m2!1sen!2sbd!4v1731861426053!5m2!1sen!2sbd" width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </a>
+        </div>
+
+
+    </div>
+
+    <div class="credit"> created by <span>Web design group</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>
